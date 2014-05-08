@@ -12,7 +12,7 @@ function sendDeletionRequest(){
 
 exports.documentReady = function(hook_name, args, cb) {
   $('#deletePadButton').click(function() {
-    sendDeletionRequest()
+    if (confirm('All data will be lost! Are you sure?')) sendDeletionRequest()
   })
   cb()
 }
